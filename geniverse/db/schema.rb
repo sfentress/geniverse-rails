@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100706150209) do
+ActiveRecord::Schema.define(:version => 20100706153950) do
 
   create_table "activities", :force => true do |t|
     t.string   "initial_alleles"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20100706150209) do
     t.boolean  "send_bred_dragons"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "title"
   end
 
 end
