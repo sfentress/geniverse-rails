@@ -1,0 +1,23 @@
+<p>
+  <b>Initial alleles:</b>
+  <%=h @activity.initial_alleles %>
+</p>
+
+<p>
+  <b>Base channel name:</b>
+  <%=h @activity.base_channel_name %>
+</p>
+
+<p>
+  <b>Max users in room:</b>
+  <%=h @activity.max_users_in_room %>
+</p>
+
+<p>
+  <b>Send bred dragons:</b>
+  <%=h @activity.send_bred_dragons %>
+</p>
+
+
+<%= link_to 'Edit', edit_activity_path(@activity) %> |
+<%= link_to 'Back', activities_path %>

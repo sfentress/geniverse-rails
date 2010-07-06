@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  initial_alleles: MyString
+  base_channel_name: MyString
+  max_users_in_room: 1
+  send_bred_dragons: false
+
+two:
+  initial_alleles: MyString
+  base_channel_name: MyString
+  max_users_in_room: 1
+  send_bred_dragons: false

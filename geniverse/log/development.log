@@ -1,0 +1,211 @@
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateActivities (20100706150209)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "activities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "initial_alleles" varchar(255), "base_channel_name" varchar(255), "max_users_in_room" integer, "send_bred_dragons" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100706150209')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("activities")[0m
+
+
+Processing ActivitiesController#index (for 127.0.0.1 at 2010-07-06 11:04:50) [GET]
+  [4;36;1mActivity Load (0.3ms)[0m   [0;1mSELECT * FROM "activities" [0m
+Rendering template within layouts/activities
+Rendering activities/index
+Completed in 24ms (View: 20, DB: 0) | 200 OK [http://0.0.0.0/activities]
+
+
+Processing ActivitiesController#new (for 127.0.0.1 at 2010-07-06 11:04:52) [GET]
+Rendering template within layouts/activities
+Rendering activities/new
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/activities/new]
+
+
+Processing ActivitiesController#create (for 127.0.0.1 at 2010-07-06 11:05:00) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"5jXndMGKAse3awa3Z+wcybNaTjU3weg7RpgNemDmAfE=", "activity"=>{"base_channel_name"=>"qqwewe", "max_users_in_room"=>"ewwq", "initial_alleles"=>"qweqeqe", "send_bred_dragons"=>"0"}}
+  [4;35;1mActivity Create (0.4ms)[0m   [0mINSERT INTO "activities" ("base_channel_name", "created_at", "updated_at", "max_users_in_room", "initial_alleles", "send_bred_dragons") VALUES('qqwewe', '2010-07-06 15:05:00', '2010-07-06 15:05:00', 0, 'qweqeqe', 'f')[0m
+Redirected to http://0.0.0.0:3000/activities/1
+Completed in 8ms (DB: 0) | 302 Found [http://0.0.0.0/activities]
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-07-06 11:05:00) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mActivity Load (0.2ms)[0m   [0;1mSELECT * FROM "activities" WHERE ("activities"."id" = 1) [0m
+Rendering template within layouts/activities
+Rendering activities/show
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/activities/1]
+
+
+Processing ActivitiesController#index (for 127.0.0.1 at 2010-07-06 11:05:04) [GET]
+  [4;35;1mActivity Load (0.4ms)[0m   [0mSELECT * FROM "activities" [0m
+Rendering template within layouts/activities
+Rendering activities/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/activities]
+
+
+Processing ActivitiesController#new (for 127.0.0.1 at 2010-07-06 11:05:05) [GET]
+Rendering template within layouts/activities
+Rendering activities/new
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/activities/new]
+
+
+Processing ActivitiesController#create (for 127.0.0.1 at 2010-07-06 11:05:11) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"5jXndMGKAse3awa3Z+wcybNaTjU3weg7RpgNemDmAfE=", "activity"=>{"base_channel_name"=>"qweqweq", "max_users_in_room"=>"123", "initial_alleles"=>"qwewqeq", "send_bred_dragons"=>"1"}}
+  [4;36;1mActivity Create (0.3ms)[0m   [0;1mINSERT INTO "activities" ("base_channel_name", "created_at", "updated_at", "max_users_in_room", "initial_alleles", "send_bred_dragons") VALUES('qweqweq', '2010-07-06 15:05:11', '2010-07-06 15:05:11', 123, 'qwewqeq', 't')[0m
+Redirected to http://0.0.0.0:3000/activities/2
+Completed in 8ms (DB: 0) | 302 Found [http://0.0.0.0/activities]
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-07-06 11:05:11) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mActivity Load (0.2ms)[0m   [0mSELECT * FROM "activities" WHERE ("activities"."id" = 2) [0m
+Rendering template within layouts/activities
+Rendering activities/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/activities/2]
+
+
+Processing ActivitiesController#index (for 127.0.0.1 at 2010-07-06 11:05:12) [GET]
+  [4;36;1mActivity Load (0.5ms)[0m   [0;1mSELECT * FROM "activities" [0m
+Rendering template within layouts/activities
+Rendering activities/index
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/activities]
+
+
+Processing ActivitiesController#destroy (for 127.0.0.1 at 2010-07-06 11:17:26) [DELETE]
+  Parameters: {"authenticity_token"=>"5jXndMGKAse3awa3Z+wcybNaTjU3weg7RpgNemDmAfE=", "id"=>"1"}
+  [4;35;1mActivity Load (0.2ms)[0m   [0mSELECT * FROM "activities" WHERE ("activities"."id" = 1) [0m
+  [4;36;1mActivity Destroy (0.2ms)[0m   [0;1mDELETE FROM "activities" WHERE "id" = 1[0m
+Redirected to http://0.0.0.0:3000/activities
+Completed in 8ms (DB: 0) | 302 Found [http://0.0.0.0/activities/1]
+
+
+Processing ActivitiesController#index (for 127.0.0.1 at 2010-07-06 11:17:26) [GET]
+  [4;35;1mActivity Load (0.5ms)[0m   [0mSELECT * FROM "activities" [0m
+Rendering template within layouts/activities
+Rendering activities/index
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/activities]
+
+
+Processing ActivitiesController#destroy (for 127.0.0.1 at 2010-07-06 11:17:29) [DELETE]
+  Parameters: {"authenticity_token"=>"5jXndMGKAse3awa3Z+wcybNaTjU3weg7RpgNemDmAfE=", "id"=>"2"}
+  [4;36;1mActivity Load (0.2ms)[0m   [0;1mSELECT * FROM "activities" WHERE ("activities"."id" = 2) [0m
+  [4;35;1mActivity Destroy (0.2ms)[0m   [0mDELETE FROM "activities" WHERE "id" = 2[0m
+Redirected to http://0.0.0.0:3000/activities
+Completed in 7ms (DB: 0) | 302 Found [http://0.0.0.0/activities/2]
+
+
+Processing ActivitiesController#index (for 127.0.0.1 at 2010-07-06 11:17:29) [GET]
+  [4;36;1mActivity Load (0.3ms)[0m   [0;1mSELECT * FROM "activities" [0m
+Rendering template within layouts/activities
+Rendering activities/index
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/activities]
+
+
+Processing ActivitiesController#new (for 127.0.0.1 at 2010-07-06 11:17:30) [GET]
+Rendering template within layouts/activities
+Rendering activities/new
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/activities/new]
+
+
+Processing ActivitiesController#create (for 127.0.0.1 at 2010-07-06 11:18:05) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"5jXndMGKAse3awa3Z+wcybNaTjU3weg7RpgNemDmAfE=", "activity"=>{"base_channel_name"=>"demo-a", "max_users_in_room"=>"100", "initial_alleles"=>"m: 'a:H,b:h,a:w,b:w,a:L,b:L,a:t,b:t,a:F,b:F', f: 'a:H,b:h,a:w,b:w,a:L,b:L,a:t,b:t,a:F,b:F'", "send_bred_dragons"=>"0"}}
+  [4;35;1mActivity Create (0.3ms)[0m   [0mINSERT INTO "activities" ("base_channel_name", "created_at", "updated_at", "max_users_in_room", "initial_alleles", "send_bred_dragons") VALUES('demo-a', '2010-07-06 15:18:05', '2010-07-06 15:18:05', 100, 'm: ''a:H,b:h,a:w,b:w,a:L,b:L,a:t,b:t,a:F,b:F'', f: ''a:H,b:h,a:w,b:w,a:L,b:L,a:t,b:t,a:F,b:F''', 'f')[0m
+Redirected to http://0.0.0.0:3000/activities/3
+Completed in 7ms (DB: 0) | 302 Found [http://0.0.0.0/activities]
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-07-06 11:18:05) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mActivity Load (0.2ms)[0m   [0;1mSELECT * FROM "activities" WHERE ("activities"."id" = 3) [0m
+Rendering template within layouts/activities
+Rendering activities/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/activities/3]
+
+
+Processing ActivitiesController#index (for 127.0.0.1 at 2010-07-06 11:18:07) [GET]
+  [4;35;1mActivity Load (0.4ms)[0m   [0mSELECT * FROM "activities" [0m
+Rendering template within layouts/activities
+Rendering activities/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/activities]
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-07-06 11:18:54) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mActivity Load (0.2ms)[0m   [0;1mSELECT * FROM "activities" WHERE ("activities"."id" = 3) [0m
+Rendering template within layouts/activities
+Rendering activities/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/activities/3]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-06 11:19:51) [GET]
+
+ActionController::RoutingError (No route matches "/rails/activities.json" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-06 11:20:29) [GET]
+
+ActionController::RoutingError (No route matches "/rails/activities.json" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-06 11:20:35) [GET]
+
+ActionController::RoutingError (No route matches "/rails/activities" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ActivitiesController#index (for 127.0.0.1 at 2010-07-06 11:20:46) [GET]
+  [4;35;1mActivity Load (0.4ms)[0m   [0mSELECT * FROM "activities" [0m
+Rendering template within layouts/activities
+Rendering activities/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/activities]
+
+
+Processing ActivitiesController#index to json (for 127.0.0.1 at 2010-07-06 11:20:49) [GET]
+  [4;36;1mActivity Load (0.4ms)[0m   [0;1mSELECT * FROM "activities" [0m
+Completed in 4ms (View: 0, DB: 0) | 406 Not Acceptable [http://localhost/activities.json]
+
+
+Processing ActivitiesController#index to json (for 127.0.0.1 at 2010-07-06 11:20:58) [GET]
+  [4;35;1mActivity Load (0.6ms)[0m   [0mSELECT * FROM "activities" [0m
+Completed in 5ms (View: 1, DB: 1) | 406 Not Acceptable [http://localhost/activities.json]
+
+
+Processing ActivitiesController#3 (for 127.0.0.1 at 2010-07-06 11:22:31) [GET]
+
+ActionController::UnknownAction (No action responded to 3. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ActivitiesController#show (for 127.0.0.1 at 2010-07-06 11:22:34) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mActivity Load (0.2ms)[0m   [0;1mSELECT * FROM "activities" WHERE ("activities"."id" = 3) [0m
+Rendering template within layouts/activities
+Rendering activities/show
+Completed in 24ms (View: 18, DB: 0) | 200 OK [http://0.0.0.0/rails/activities/3]
