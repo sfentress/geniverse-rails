@@ -100,8 +100,9 @@ class ActivitiesController < ApplicationController
   protected
   def json_for_activity(activity)
     { :guid => activity_path(activity, :format => :json ),
+      :title => activity.title,
       :initialAlleles => activity.initial_alleles,
-      :baseChannelNameame => activity.base_channel_name,
+      :baseChannelName => activity.base_channel_name,
       :maxUsersInRoom => activity.max_users_in_room,
       :sendBredDragons => activity.send_bred_dragons
     }
