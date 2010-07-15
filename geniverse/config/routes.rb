@@ -1,7 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.with_options :path_prefix => 'rails' do |sc_map|
-    sc_map.resources :activities
-  end
+  map.resources :activities
 
   # The priority is based upon order of creation: first created -> highest priority.
 
