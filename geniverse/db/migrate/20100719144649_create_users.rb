@@ -10,7 +10,7 @@ class CreateUsers < ActiveRecord::Migration
   end
 
   def self.down
-    remove_index :users, :column_name
+    remove_index :users, [:username, :password_hash]
     drop_table :users
   end
 end
