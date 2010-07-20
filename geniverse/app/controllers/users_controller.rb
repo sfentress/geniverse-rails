@@ -13,11 +13,17 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.xml
   def show
-    @user = User.find(params[:id])
+    if params[:id]
+      @user = User.find(params[:id])
+    else
+       @user = User.find_by_username(params[:username])
+       raise ActiveRecord::RecordNotFound, "Couldn't find user with username #{params[:username]}" unless @user 
+    end
 
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @user }
+      format.json { render :json => @user }
     end
   end
 
@@ -46,6 +52,7 @@ class UsersController < ApplicationController
       if @user.save
         format.html { redirect_to(@user, :notice => 'User was successfully created.') }
         format.xml  { render :xml => @user, :status => :created, :location => @user }
+        format.json { render :json => @user, :status => :created, :location => @user }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
@@ -80,4 +87,5 @@ class UsersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
 end
